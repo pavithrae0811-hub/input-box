@@ -92,37 +92,73 @@ button {
 
   </form>
 </div>
-<script>
-document.querySelector('form').addEventListener('submit', function(event) {
+  <script>
+document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    let name = document.getElementById('name').value.trim();
-    let age = document.getElementById('age').value.trim();
-    let email = document.getElementById('email').value.trim();
-    let userId = document.getElementById('user-id').value.trim();
-    let password = document.getElementById('password').value.trim();
-    let dob = document.getElementById('dob').value.trim();
-    let phone = document.getElementById('phone').value.trim();
-    let address = document.getElementById('address').value.trim();
+    
+    document.querySelectorAll(".error").forEach(function(error) {
+        error.textContent = "";
+    });
 
-  
-    let missingFields = [];
+    let hasError = false;
 
-    if (!name) missingFields.push("Name");
-    if (!age) missingFields.push("Age");
-    if (!email) missingFields.push("Email");
-    if (!userId) missingFields.push("User ID");
-    if (!password) missingFields.push("Password");
-    if (!dob) missingFields.push("Date of Birth");
-    if (!phone) missingFields.push("Phone Number");
-    if (!address) missingFields.push("Address");
+   
+    let name = document.getElementById("name").value.trim();
+    let age = document.getElementById("age").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let userId = document.getElementById("user-id").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let dob = document.getElementById("dob").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let address = document.getElementById("address").value.trim();
 
     
-     if (missingFields.length > 0) {
-    alert("showing all fields:\n\n" + missingFields.join("\n"));
-    return;
-  }
-      
+    if (name === "") {
+        document.getElementById("name-error").textContent = "* This field is required";
+        hasError = true;
+    }
+
+    if (age === "") {
+        document.getElementById("age-error").textContent = "* This field is required";
+        hasError = true;
+    }
+
+    if (email === "") {
+        document.getElementById("email-error").textContent = "* This field is required";
+        hasError = true;
+    }
+
+    if (userId === "") {
+        document.getElementById("user-id-error").textContent = "* This field is required";
+        hasError = true;
+    }
+
+    if (password === "") {
+        document.getElementById("password-error").textContent = "* This field is required";
+        hasError = true;
+    }
+
+    if (dob === "") {
+        document.getElementById("dob-error").textContent = "* This field is required";
+        hasError = true;
+    }
+
+    if (phone === "") {
+        document.getElementById("phone-error").textContent = "* This field is required";
+        hasError = true;
+    }
+
+    if (address === "") {
+        document.getElementById("address-error").textContent = "* This field is required";
+        hasError = true;
+    }
+
+    
+    if (hasError) {
+        return;
+    }
+
     alert(
         "Form submitted successfully!\n\n" +
         "Name: " + name + "\n" +
@@ -134,6 +170,8 @@ document.querySelector('form').addEventListener('submit', function(event) {
         "Phone Number: " + phone + "\n" +
         "Address: " + address
     );
+
+    document.querySelector("form").reset();
 });
 </script>
 </body>

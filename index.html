@@ -93,37 +93,48 @@ button {
   </form>
 </div>
 <script>
-      document.querySelector('form').addEventListener('submit', function(event) {
-      event.preventDefault();
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-     let name = document.getElementById('name').value.trim();
-     let age = document.getElementById('age').value.trim();
-     let email = document.getElementById('email').value.trim();
-     let userId = document.getElementById('user-id').value.trim();
-     let password = document.getElementById('password').value.trim();
-     let dob = document.getElementById('dob').value.trim();
-     let phone = document.getElementById('phone').value.trim();
-     let address = document.getElementById('address').value.trim();
+    let name = document.getElementById('name').value.trim();
+    let age = document.getElementById('age').value.trim();
+    let email = document.getElementById('email').value.trim();
+    let userId = document.getElementById('user-id').value.trim();
+    let password = document.getElementById('password').value.trim();
+    let dob = document.getElementById('dob').value.trim();
+    let phone = document.getElementById('phone').value.trim();
+    let address = document.getElementById('address').value.trim();
 
-      if(!name || !age || !email || !userId || !password || !dob || !phone || !address)
-   {
-    alert("Please fill in all the fields.");
+  
+    let missingFields = [];
+
+    if (!name) missingFields.push("Name");
+    if (!age) missingFields.push("Age");
+    if (!email) missingFields.push("Email");
+    if (!userId) missingFields.push("User ID");
+    if (!password) missingFields.push("Password");
+    if (!dob) missingFields.push("Date of Birth");
+    if (!phone) missingFields.push("Phone Number");
+    if (!address) missingFields.push("Address");
+
+    
+     if (missingFields.length > 0) {
+    alert("showing all fields:\n\n" + missingFields.join("\n"));
     return;
   }
-
-  alert(
-    "Form submitted successfully!\n\n" +
-      "Name: " + name + "\n" +
-      "Age: " + age + "\n" +
-      "Email: " + email + "\n" +
-      "User ID: " + userId + "\n" +
-      "Password: " + password + "\n" +
-      "Date of Birth: " + dob + "\n" +
-      "Phone Number: " + phone + "\n" +
-      "Address: " + address
-  );
+      
+    alert(
+        "Form submitted successfully!\n\n" +
+        "Name: " + name + "\n" +
+        "Age: " + age + "\n" +
+        "Email: " + email + "\n" +
+        "User ID: " + userId + "\n" +
+        "Password: " + password + "\n" +
+        "Date of Birth: " + dob + "\n" +
+        "Phone Number: " + phone + "\n" +
+        "Address: " + address
+    );
 });
-
 </script>
 </body>
 </html>

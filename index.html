@@ -117,7 +117,6 @@
 document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    // Remove previous error messages
     document.querySelectorAll(".error").forEach(error => error.remove());
 
     let isValid = true;

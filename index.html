@@ -118,8 +118,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     if (!address) missingFields.push("Address");
 
     
-     if (missingFields.length > 0) {
-    alert("showing all fields:);
+     alter("Required fields are:\n\n" + missingFields.join("\n"));
     return;
   }
       

@@ -42,7 +42,7 @@
       border-radius: 5px;
       box-sizing: border-box;
     }
-    
+
 
     button {
       width: 100%;
@@ -78,35 +78,35 @@
 
     <label>Name:</label>
     <input type="text" id="name" placeholder="Enter your name">
-    <small class="error" style="display:none;">* This field is required.</small>
+    <span class="error" style="display:none;">* This field is required.</span>
 
     <label>Age:</label>
     <input type="number" id="age" placeholder="Enter your age">
-    <small class="error" style="display:none;">* This field is required.</small>
+    <span class="error" style="display:none;">* This field is required.</span>
 
     <label>Email:</label>
     <input type="email" id="email" placeholder="Enter your email">
-    <small class="error" style="display:none;">* This field is required.</small>
+    <span class="error" style="display:none;">* This field is required.</span>
 
     <label>User ID:</label>
     <input type="text" id="user-id" placeholder="Enter your user ID">
-    <small class="error" style="display:none;">* This field is required.</small>
+    <span class="error" style="display:none;">* This field is required.</span>
 
     <label>Password:</label>
     <input type="password" id="password" placeholder="Enter your password">
-    <small class="error" style="display:none;">* This field is required.</small>
+    <span class="error" style="display:none;">* This field is required.</span>
 
     <label>Date of Birth:</label>
     <input type="date" id="dob">
-    <small class="error" style="display:none;">* This field is required.</small>
+    <span class="error" style="display:none;">* This field is required.</span>
 
     <label>Phone Number:</label>
     <input type="tel" id="phone" placeholder="Enter your phone number">
-    <small class="error" style="display:none;">* This field is required.</small>
+    <span class="error" style="display:none;">* This field is required.</span>
 
     <label>Address:</label>
     <input type="text" id="address" placeholder="Enter your address">
-    <small class="error" style="display:none;">* This field is required.</small>
+    <span class="error" style="display:none;">* This field is required.</span>
 
     <button type="submit">Submit</button>
 
@@ -124,7 +124,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
     function showError(id) {
         let input = document.getElementById(id);
 
-        let error = document.createElement("small");
+        let error = document.createElement("spangi");
         error.className = "error";
         error.textContent = "* This field is required.";
 
